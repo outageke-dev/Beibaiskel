@@ -38,6 +38,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en-KE">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Google tag (gtag.js) - GA4 */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-FRP8M4G4Q9"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);} 
+          gtag('js', new Date());
+
+          gtag('config', 'G-FRP8M4G4Q9');`}
+        </Script>
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         {adsenseId && (
           <Script
